@@ -1,0 +1,51 @@
+{% load static %}
+<style>
+	.main_container {
+   		width: 40vw;
+   		height: 90vh;
+	}
+	h1 { font: 2em sans-serif; }
+	.res {
+		 font: 12pt sans-serif;
+	}
+	@media (max-width: 1000px) { 
+   		.main_container {   
+       		width: 100%;
+       		height: 100%;
+   		}
+   		h1 { font: 4em sans-serif; }
+	}
+</style>
+<div style="background-image: url({% static 'securityApp/email-pattern.png' %}); margin: auto; height: auto; padding: 5vh; text-align: center;">
+
+	<div class="main_container" style="background-color: white; border-radius: 20px; box-shadow: 0px 0px 20px #CCCCCC; margin: auto;">
+		<div style="margin: auto; padding-top: 5vh; text-align: center;">
+			<img src="{% static 'securityApp/securityAppLogo.png' %}" height="90vh" alt="Logo">
+			<h1 style="">PRIVIO</h1>
+		</div>
+		
+		<div style="margin: auto; text-align: center;">
+			<!-- security score -->
+			<div class="security_score" style="background-color: green; border-radius: 50%; box-shadow: 0px 0px 20px green; color: white; font: 2em sans-serif; margin: auto; text-align: center; line-height: 90px; height: 90px; width: 90px;">{{ privacyRating }}</div>
+			
+			<!-- info -->
+			<div class="results_container" style="padding:2em 0px;">
+                <div class="res res_name"><h2>{{ names }}</h2></div>
+				<div class="res res_address">Address: {{ addresses }}</div>
+                <div class="res re_email">Email: {{ emails }}</div>
+				<!--<div class="res res_city">Generic City</div>
+				<div class="res res_country">USA</div>-->
+				<div class="res res_phoneNum">Phone: {{ phones }}</div>
+				<div class="res res_job">Occupation: {{ jobs }}</div>
+                <div class="res res_job">Relationships: {{ relationships }}</div>
+				<div class="res res_IP">IP Address: {{ ipAddress }}</div>
+                <div class="res res_ipCountry">IP Location: {{ regionName }}, {{ countryName }}</div>
+                <div class=""res res_ipProxy">VPN Detected: {{ ipProxy }}</div>
+			</div>
+			
+			<!-- social media -->
+			<div class="sm_container"  style="font: 12pt sans-serif; padding-top:6em;">[Social Media]
+			</div>
+		</div>
+	</div>
+</div>
